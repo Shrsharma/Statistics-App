@@ -1,15 +1,84 @@
-﻿@page
-@using Microsoft.AspNetCore.Http
-
-@{
+﻿@{
     ViewData["Title"] = "Index";
 }
+
+
 <p>
-    <div>@HttpContext.Session.GetString("Mins") </div>
-    <a asp-action="opr">Student Count  |  </a><br />
-    <a asp-action="opr">Maximum marks obtained in Subjects  |  </a>  <br />
-    <a asp-action="opr">Minimum marks obtained in Subjects  |  </a> <br />
-    <a asp-action="opr">Average marks obtained in Subjects  |  </a>  <br />
-    <a asp-action="opr">Maximum marks obtained by Student in Subjects  |  </a>  <br />
-    <a asp-action="opr">Minimum marks obtained by Student in Subjects  |  </a>  <br />
+    <div>Student Count  | @Context.Request.Cookies["StudCnt"] </div> <br />
+    <div>Subject Count  | 3 </div> <br />
+
+    <div>
+        List of Maximum marks in each Subject : <br />
+        <ul>
+            <li>
+                Science  | @Context.Request.Cookies["maxScience"]
+            </li>
+            <li>
+                English  | @Context.Request.Cookies["maxEnglish"]
+            </li>
+            <li>
+                Maths  | @Context.Request.Cookies["maxMaths"]
+            </li>
+        </ul>
+    </div> <br />
+
+    <div>
+        List of Minimum marks in each Subject : <br />
+        <ul>
+            <li>
+                Science  | @Context.Request.Cookies["minScience"]
+            </li>
+            <li>
+                English  | @Context.Request.Cookies["minEnglish"]
+            </li>
+            <li>
+                Maths  | @Context.Request.Cookies["minMaths"]
+            </li>
+        </ul>
+    </div> <br />
+
+    <div>
+        List of Average marks in each Subject : <br />
+        <ul>
+            <li>
+                Science  | @Context.Request.Cookies["avgScience"]
+            </li>
+            <li>
+                English  | @Context.Request.Cookies["avgEnglish"]
+            </li>
+            <li>
+                Maths  | @Context.Request.Cookies["avgMaths"]
+            </li>
+        </ul>
+    </div> <br />
+
+    <div>
+        List of Students with Highest marks in each Subject : <br />
+        <ul>
+            <li>
+                Science  | @Context.Request.Cookies["MaxStudScience"]
+            </li>
+            <li>
+                English  | @Context.Request.Cookies["MaxStudEnglish"]
+            </li>
+            <li>
+                Maths  | @Context.Request.Cookies["MaxStudMaths"]
+            </li>
+        </ul>
+    </div> <br />
+
+    <div>
+        List of Students with Lowest marks in each Subject : <br />
+        <ul>
+            <li>
+                Science  | @Context.Request.Cookies["MinStudScience"]
+            </li>
+            <li>
+                English  | @Context.Request.Cookies["MinStudEnglish"]
+            </li>
+            <li>
+                Maths  | @Context.Request.Cookies["MinStudMaths"]
+            </li>
+        </ul>
+    </div> <br />
 </p>
