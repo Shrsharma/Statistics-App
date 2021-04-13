@@ -1,0 +1,15 @@
+﻿@page
+@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Index";
+}
+<p>
+    <div>@HttpContext.Session.GetString("Mins") </div>
+    <a asp-action="opr">Student Count  |  </a><br />
+    <a asp-action="opr">Maximum marks obtained in Subjects  |  </a>  <br />
+    <a asp-action="opr">Minimum marks obtained in Subjects  |  </a> <br />
+    <a asp-action="opr">Average marks obtained in Subjects  |  </a>  <br />
+    <a asp-action="opr">Maximum marks obtained by Student in Subjects  |  </a>  <br />
+    <a asp-action="opr">Minimum marks obtained by Student in Subjects  |  </a>  <br />
+</p>
